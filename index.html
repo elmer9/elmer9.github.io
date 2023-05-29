@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <!-- javascript を記述 -->
+<meta http-equiv="content-script-type" content="text/javascript" />
+<script type="text/javascript"><!--
+function changeInnerText(newText){
+document.getElementById('MyDiv').innerHTML = newText;
+}
+--></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +40,15 @@
  </pre>
  
     <a href= "https://lnln.dev/" >りんりんりんりん</a>
+
+    <div id="MyDiv"
+onmouseover="changeInnerText('んんんんんんんんんんんんんん');"
+onmouseout="changeInnerText('りりりりりりりりりりりりりり');" style="font-size:200%">
+りりりりりりりりりりりりりりり</div>
+
+    <img src="rinrinzemi.png" width=100 height=100 alt="" title="りーんりんりんりんりんりんりーんりんりんりんりんりん">
+    <img src="suzumushi.png" width=100 height=100 alt="" title="りーんりーんりーん">
+   
 </center>
 </body>
 </html>
