@@ -45,3 +45,6 @@ div.center {text-align: center;}
   border: 2px solid #000000;
 }
 
+#saveButton {
+  margin-top: 10px;
+}
