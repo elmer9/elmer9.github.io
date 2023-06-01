@@ -22,13 +22,19 @@ saveButton.onclick = () => {
     canvas.height = rectangle.offsetHeight;
   
     const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(rectangle, 0, 0);
+    ctx.fillStyle = 'white'; // 背景色を指定（必要に応じて変更してください）
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
   
-    const image = canvas.toDataURL('image/png');
+    const data = new XMLSerializer().serializeToString(rectangle);
   
-    const link = document.createElement('a');
-    link.href = image;
-    link.download = 'rectangle_image.png';
-    link.click();
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0);
+  
+      const link = document.createElement('a');
+      link.href = canvas.toDataURL('image/png');
+      link.download = 'rectangle_image.png';
+      link.click();
+    };
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(data);
   };
