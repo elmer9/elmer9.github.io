@@ -54,5 +54,18 @@ saveButton.onclick = () => {
     link.download = 'rectangle_image.png';
     link.click();
   });
+  //新しくキャンバスを作ってhtml2canvas(rectangle) を貼り付ける
+
+
 };
 
+var mem_canvas;
+
+    function createCanvas() {
+      mem_canvas = document.createElement("canvas");
+      mem_canvas.width = 64;
+      mem_canvas.height = 64;
+      var context = mem_canvas.getContext('2d');
+      context.fillStyle = "rgb(0,0,192)";
+      context.fillRect(0, 0, 64, 64);
+    }
