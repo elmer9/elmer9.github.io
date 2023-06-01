@@ -16,25 +16,43 @@ function getRandomPosition(max) {
     return Math.floor(Math.random() * max);
 }
 
+// saveButton.onclick = () => {
+//     const canvas = document.createElement('canvas');
+//     canvas.width = rectangle.offsetWidth;
+//     canvas.height = rectangle.offsetHeight;
+  
+//     const ctx = canvas.getContext('2d');
+//     ctx.fillStyle = 'white'; // 背景色を指定（必要に応じて変更してください）
+//     ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+//     const data = new XMLSerializer().serializeToString(rectangle);
+//     console.log(data)
+  
+//     const img = new Image();
+//     img.onload = () => {
+//       ctx.drawImage(img, 0, 0);
+  
+//       const link = document.createElement('a');
+//       link.href = canvas.toDataURL('image/png');
+//       link.download = 'rectangle_image.png';
+//       link.click();
+//       console.log("a")
+//     };
+//     img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(data);
+//     console.log(img)
+
+//     const link = document.createElement('a');
+//       link.href = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(data);
+//       link.download = 'rectangle_image.png';
+//       link.click();
+//   };
+
 saveButton.onclick = () => {
-    const canvas = document.createElement('canvas');
-    canvas.width = rectangle.offsetWidth;
-    canvas.height = rectangle.offsetHeight;
-  
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = 'white'; // 背景色を指定（必要に応じて変更してください）
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-  
-    const data = new XMLSerializer().serializeToString(rectangle);
-  
-    const img = new Image();
-    img.onload = () => {
-      ctx.drawImage(img, 0, 0);
-  
-      const link = document.createElement('a');
-      link.href = canvas.toDataURL('image/png');
-      link.download = 'rectangle_image.png';
-      link.click();
-    };
-    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(data);
-  };
+  html2canvas(rectangle).then((canvas) => {
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = 'rectangle_image.png';
+    link.click();
+  });
+};
+
