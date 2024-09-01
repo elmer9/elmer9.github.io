@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram User ID Finder</title>
+</head>
+<body>
+    <h1>Instagram User ID Finder</h1>
+    <form id="userForm">
+        <label for="username">Instagram Username:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Get User ID</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const apiKey = 'YOUR_HIKER_API_KEY'; // APIキーをここに入力
+            const username = document.getElementById('username').value;
+
+            fetch(`https://api.hiker.com/v1/instagram/user?username=${username}`, {
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.id) {
+                    document.getElementById('result').textContent = `User ID for ${username} is ${data.id}`;
+                } else {
+                    document.getElementById('result').textContent = 'User not found or API error.';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching user ID:', error);
+                document.getElementById('result').textContent = 'An error occurred. Please try again.';
+            });
+        });
+    </script>
+</body>
+</html>
