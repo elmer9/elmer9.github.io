@@ -17,10 +17,10 @@
     <script>
         document.getElementById('userForm').addEventListener('submit', function(event) {
             event.preventDefault();
-
-            const apiKey = 'kavnfcpzoKhUxy8AkFWsBnqAqpos1abJ'; // APIキーをここに入力
+        
+            const apiKey = 'YOUR_HIKER_API_KEY'; // APIキーをここに入力
             const username = document.getElementById('username').value;
-
+        
             fetch(`https://api.hiker.com/v1/instagram/user?username=${username}`, {
                 headers: {
                     'Authorization': `Bearer ${apiKey}`
@@ -28,6 +28,7 @@
             })
             .then(response => response.json())
             .then(data => {
+                console.log(data); // ここでレスポンスデータ全体を確認
                 if (data.id) {
                     document.getElementById('result').textContent = `User ID for ${username} is ${data.id}`;
                 } else {
@@ -39,6 +40,7 @@
                 document.getElementById('result').textContent = 'An error occurred. Please try again.';
             });
         });
+        
     </script>
 </body>
 </html>
