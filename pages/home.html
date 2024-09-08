@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun and Moon</title>
+    <style>
+        /* 全ての余白とパディングをリセット */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* body全体の設定 */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff; /* 背景を白に */
+            color: #000;
+            text-align: center;
+        }
+
+        /* ナビゲーションバーのスタイル */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #4a0072; /* 深い紫でまがまがしい雰囲気 */
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #ff1744; /* 蛍光赤で強調 */
+        }
+
+        .navbar a:hover {
+            color: #76ff03; /* 蛍光グリーンでホバー時に強調 */
+        }
+
+        .main-content {
+            margin-top: 30px;
+        }
+
+        .main-content h1 {
+            font-size: 3em;
+            color: #ff00ff; /* 蛍光ピンク */
+            text-shadow: 4px 4px 0 #000000; /* 黒の影 */
+            margin-bottom: 10px;
+        }
+
+        .main-content p {
+            font-size: 1.5em;
+            color: #ffeb3b; /* 蛍光イエロー */
+            text-shadow: 2px 2px 0 #000000; /* 黒の影 */
+            margin-bottom: 20px;
+        }
+
+        .greeting {
+            background-color: #e0e0e0; /* 灰色の背景 */
+            padding: 10px;
+            display: inline-block;
+            font-size: 1.2em;
+            color: #000000; /* 黒い文字 */
+            margin-bottom: 30px;
+        }
+
+        .member-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .member {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .member img {
+            width: 150px;
+            height: auto;
+            border: 3px solid #ff1744; /* 蛍光赤の枠線 */
+        }
+
+        .new-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #00e676; /* 蛍光グリーン */
+            color: #d500f9; /* 蛍光紫 */
+            font-size: 0.8em;
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+        .member-name {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #ff1744; /* 蛍光赤 */
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        /* 左上に画像を固定するスタイル */
+        .logo {
+            position: fixed; /* 画面の左上に固定 */
+            top: 0;
+            left: 0;
+            width: 150px; /* サイズを大きく */
+            height: auto;
+            z-index: 1000; /* 前面に配置するためにz-indexを設定 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 左上に配置される画像 -->
+    <img src="elmertitle.png" alt="Logo" class="logo">
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+        <p>ユア ギビングミー</p>
+        <h1>ザ・フィーリング！</h1>
+    </div>
+
+    <!-- こんにちはメッセージ -->
+    <div class="greeting">You're giving me the feeling!</div>
+
+    <!-- メンバーセクション -->
+    <div class="member-section">
+        <div class="member">
+            <img src="karina.png" alt="Karina">
+            <div class="new-badge">New!!</div>
+            <p class="member-name">カリナ</p>
+        </div>
+        <div class="member">
+            <img src="giselle.png" alt="Giselle">
+            <div class="new-badge">New!!</div>
+            <p class="member-name">ジゼル</p>
+        </div>
+        <div class="member">
+            <img src="winter.png" alt="Winter">
+            <div class="new-badge">New!!</div>
+            <p class="member-name">ウィンター</p>
+        </div>
+        <div class="member">
+            <!-- ニンニンのリンク -->
+            <a href="ningning.html">
+                <img src="ningning.png" alt="Ningning">
+                <div class="new-badge">New!!</div>
+                <p class="member-name">ニンニン</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
